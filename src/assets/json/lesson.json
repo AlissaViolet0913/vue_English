@@ -1,0 +1,157 @@
+[
+    {
+        "id": 1,
+        "english":[
+            "I",
+            "go", 
+            "to",
+            "the",
+            "gym",
+            "every",
+            "morning"
+        ],
+        "japanese": "毎朝ジムに通っています"
+    },
+    {
+        "id": 2,
+        "english":[
+            "Did",
+            "you", 
+            "speak",
+            "to",
+            "your",
+            "dad",
+            "about",
+            "the",
+            "debt",
+            "yesterday",
+            "?"
+        ],
+        "japanese": "昨日お父さんとあの借金の事話した？"
+    },
+    {
+        "id": 3,
+        "english":[
+            "Was",
+            "I", 
+            "really",
+            "drunk",
+            "last",
+            "night",
+            "?"
+        ],
+        "japanese": "昨日の夜私かなり酔ってた？"
+    },
+    {
+        "id": 4,
+        "english":[
+            "My",
+            "parents", 
+            "are",
+            "not",
+            "rich",
+            "at",
+            "all"
+        ],
+        "japanese": "うちの親は全然金持ちじゃないよ"
+    },
+    {
+        "id": 5,
+        "english":[
+            "Tanaka",
+            "didn't", 
+            "show",
+            "up",
+            "in",
+            "the",
+            "end"
+        ],
+        "japanese": "田中さんは結局来ませんでしたよ"
+    },
+    {
+        "id": 6,
+        "english":[
+            "We",
+            "have", 
+            "less",
+            "customers",
+            "this",
+            "year",
+            "than",
+            "last",
+            "year"
+        ],
+        "japanese": "今年は去年よりもお客さんが少ないね"
+    },
+    {
+        "id": 7,
+        "english":[
+            "There",
+            "was", 
+            "no",
+            "one",
+            "on",
+            "the",
+            "train",
+            "apart",
+            "from",
+            "me",
+            "on",
+            "the",
+            "way",
+            "home"
+        ],
+        "japanese": "帰りの電車に自分以外いなかった"
+    },
+    {
+        "id": 8,
+        "english":[
+            "It",
+            "is", 
+            "often",
+            "said",
+            "that",
+            "studying",
+            "abroad",
+            "changes",
+            "your",
+            "values"
+        ],
+        "japanese": "留学すると価値観変わるってよく言われていますよね"
+    },
+    {
+        "id": 9,
+        "english":[
+            "I",
+            "think", 
+            "my",
+            "company",
+            "is",
+            "the",
+            "in",
+            "terms",
+            "of",
+            "welfare",
+            "benefits"
+        ],
+        "japanese": "福利厚生の面ではうちの会社は最高だと思うけどな"
+    },
+    {
+        "id": 10,
+        "english":[
+            "If",
+            "I", 
+            "were",
+            "at",
+            "your",
+            "position",
+            ",",
+            "I",
+            "would",
+            "definitely",
+            "try",
+            "that"
+        ],
+        "japanese": "自分がその立場なら絶対にトライするよ"
+    }
+]
