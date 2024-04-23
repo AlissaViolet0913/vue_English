@@ -10,6 +10,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      // srcディレクトリを「＠」と記述できるよう設定
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
