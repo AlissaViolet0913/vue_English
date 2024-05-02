@@ -5,6 +5,7 @@
     <div class="main">
         <h1>Welcome <span class="blue">LRNG English!</span>
         </h1>
+        <p class="explain">全部で10問！正しい順番に単語を並び替えよう。</p>
         <router-link to="/practice/1">
             <button class="btn btn-flat">
                 <span>練習を開始する</span>
@@ -22,9 +23,15 @@
     text-align: center;
     font-size: 2rem;
 }
+
 .blue{
     color: rgb(5, 68, 196);
     font: bold;
+}
+
+.explain{
+  font-size: 2rem;
+  padding-bottom: 3%;
 }
 
 /* button */

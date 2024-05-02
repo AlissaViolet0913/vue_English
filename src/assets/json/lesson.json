@@ -71,37 +71,39 @@
     {
         "id": 6,
         "english":[
-            "We",
-            "have", 
-            "less",
-            "customers",
-            "this",
+            "My",
+            "stolen", 
+            "watch",
+            "was",
+            "returned",
+            "a",
             "year",
-            "than",
-            "last",
-            "year"
+            "later"
         ],
-        "japanese": "今年は去年よりもお客さんが少ないね"
+        "japanese": "盗まれた腕時計が1年越しに返ってきたんだよ"
     },
     {
         "id": 7,
         "english":[
-            "There",
-            "was", 
-            "no",
-            "one",
-            "on",
-            "the",
-            "train",
-            "apart",
-            "from",
-            "me",
-            "on",
-            "the",
-            "way",
-            "home"
+            "The",
+            "man", 
+            "was",
+            "told",
+            "by",
+            "his",
+            "doctor",
+            "that",
+            "he",
+            "had",
+            "to",
+            "in",
+            "bed",
+            "for",
+            "a",
+            "few",
+            "days"
         ],
-        "japanese": "帰りの電車に自分以外いなかった"
+        "japanese": "その男性はお医者さんに数日間寝ていなければならないと言われた"
     },
     {
         "id": 8,
@@ -139,19 +141,19 @@
     {
         "id": 10,
         "english":[
-            "If",
-            "I", 
-            "were",
-            "at",
-            "your",
-            "position",
-            ",",
-            "I",
-            "would",
-            "definitely",
-            "try",
-            "that"
+            "Have",
+            "you", 
+            "checked",
+            "to",
+            "see",
+            "if",
+            "the",
+            "mail",
+            "has",
+            "arrived",
+            "yet",
+            "?"
         ],
-        "japanese": "自分がその立場なら絶対にトライするよ"
+        "japanese": "あの手紙がきているかもうチェックしてくれた？"
     }
 ]
