@@ -9,6 +9,7 @@ let errMsg = ref("");
 let answer = ref("");
 let sentence = ref([]);;
 let nextBtn = ref(false);
+let finish = ref(false);
 
 // クエリパラメータ(id)取得
 let route = useRoute();
@@ -36,10 +37,11 @@ const shuffleArray = (array) => {
 english = shuffleArray(english.value);
 
 // ボタンが押されたときにwordの値をsentenceに格納し、画面に表示されないようにする
+// .filter(): wordと一致しない要素だけをフィルタリングして新しい配列作成
 function addTosentence(word){
     sentence.value.push(word);
+    // console.log(english)
     english = english.filter(item => item !== word);
-    console.log(english)
 }
 
 // englishとsentenceの配列要素が一致することを確認
@@ -67,8 +69,12 @@ function compareArrays(arr1, arr2) {
     }
 }
 
-
-
+// 「取り消し」ボタン
+function undoRemove() {
+    const lastWord = sentence.value.pop();
+    sentence.value = sentence.value.filter(item => item !== lastWord);
+    english.push(lastWord);
+}
 
 // 「できた！」ボタン
 const router = useRouter();
@@ -80,50 +86,82 @@ function levelUp(){
     };
     
     }
-
+console.log(english)
 // 「次の問題へ進む」ボタン
 function nextPage(){
-    n.value += 1;
-        english = computed(() => shuffleArray(lesson[n.value]?.english));
-        sentence.value.push(english.value)
-        sentence.value = [];
-        isErrMsg.value = false;
-        nextBtn.value = false;
-        router.push(`/practice/${n.value + 1}`);
-}
+    if(n.value < 10){
+        n.value += 1;
+            english = shuffleArray(lesson[n.value]?.english);
+            // english = computed(() => shuffleArray(lesson[n.value]?.english));
+            console.log(english)
+            sentence.value.push(english.value)
+            sentence.value = [];
+            isErrMsg.value = false;
+            nextBtn.value = false;
+            router.push(`/practice/${n.value + 1}`);
+            }else{
+                finish.value = true;
+            }
+    }
 </script>
 
 <template>
     <div class="practiceMain">
-        <p class="japanese">問題：<span class="japaneseSpn">「{{ japanese }}」</span>
-        </p>
-        <!-- join(""): 各要素を配列で区切られた文字列に連結 -->
-        <p class="english">{{ sentence.join(' ') }}</p>
-
-        <div>
-            <p v-if="isErrMsg" class="errMsg1">{{ errMsg }}</p>
-            <p v-if="isErrMsg" class="errMsg2">{{ answer }}</p>
-        </div>
-
-        <div class="word-container">
-            <div v-for="word in english" :key="word" class="word-item">
-                <button @click="addTosentence(word)" class="word">
-                    {{ word }}
+        <div v-if="!finish">
+            <p class="japanese">問題：<span class="japaneseSpn">「{{ japanese }}」</span>
+            </p>
+            <!-- join(""): 各要素を配列で区切られた文字列に連結 -->
+            <p class="english">{{ sentence.join(' ') }}</p>
+            
+            <div>
+                <p v-if="isErrMsg" class="errMsg1">{{ errMsg }}</p>
+                <p v-if="isErrMsg" class="errMsg2">{{ answer }}</p>
+            </div>
+            
+            <div class="word-container">
+                <div v-for="word in english" :key="word" class="word-item">
+                    <button @click="addTosentence(word)" class="word">
+                        {{ word }}
+                    </button>
+                </div>
+                
+                <button v-if="sentence.length > 0 && !nextBtn" @click="undoRemove()" class="undo-btn">
+                    取り消し✖
                 </button>
             </div>
-        </div>
-
-        <button v-if="!nextBtn" @click="levelUp()" class="btn btn--blue btn--cubic btn--shadow" >
-            できた！
-        </button>
+            
+            
+            <button v-if="!nextBtn" @click="levelUp()" class="btn btn--blue btn--cubic btn--shadow" >
+                できた！
+            </button>
 
         <button v-if="nextBtn" @click="nextPage()" class="btn btn--blue btn--cubic btn--shadow">
             次の問題へ進む
         </button>
     </div>
+
+    <div v-if="finish">
+        <p class="finish">全問終了。お疲れ様でした！</p>
+        <router-link to="/" class="link">⇒再度チャンレンジする場合はこちら</router-link>
+    </div>
+    </div>
 </template>
 
 <style>
+
+.finish{
+font-size: 5rem;
+}
+
+.link{
+    font-size: 3rem;
+}
+
+.undo-btn{
+    background-color: rgb(255, 220, 253);
+    border: solid  rgb(246, 132, 240);
+    border-radius: 4px;
+}
 
 .errMsg1{
     color: red;
